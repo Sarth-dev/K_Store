@@ -14,6 +14,12 @@ connectDB();
 const app = express();
 
 // CORS configuration
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  "https://kstore-rust.vercel.app",
+  "http://localhost:3000",
+].filter(Boolean); // removes undefined
+
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
