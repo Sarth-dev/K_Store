@@ -7,6 +7,7 @@ const cartRoutes = require("./routes/cartRoutes"); // Add this
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const pincodeRoutes = require('./routes/pincodeRoutes');
 const { notFound, errorHandler } = require("./middleware/errorHandler");
 
 connectDB();
@@ -41,6 +42,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/cart", cartRoutes); 
+app.use("/api/pincode", pincodeRoutes);
 app.use("/api/orders", orderRoutes);
 
 app.use(notFound);
